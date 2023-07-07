@@ -1,0 +1,15 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+browser = webdriver.Chrome()
+# browser.implicitly_wait(12)
+
+browser.maximize_window()
+browser.get("https://chercher.tech/practice/implicit-wait-example")
+
+checkbox = browser.find_element(By.XPATH, "//*[@type='checkbox']" )
+assert checkbox.is_displayed()
+time.sleep(5)
+print("checkbox está na tela")
+
